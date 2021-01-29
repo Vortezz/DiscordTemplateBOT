@@ -11,7 +11,6 @@ client.on("ready", () => {
 });
 
 client.on("message", message => {
-  //This
   if(message.author.bot) return;
   if(message.channel.type === 'dm') {
     message.channel.send("**No commands in DM ^^**");
