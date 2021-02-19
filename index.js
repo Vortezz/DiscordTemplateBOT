@@ -6,14 +6,14 @@ client.commands = new Discord.Collection();
 if(config.token === "changeitinconfig.json") return console.warn("Change the token :) Go to https://www.discordapp.com/developers to have your token ;)");
 
 client.on("ready", () => {
-  console.log(client.user.username + " is online.");
+  console.log(client.user.username + " is online !");
   client.user.setActivity(config.activity);
 });
 
 client.on("message", message => {
   if(message.author.bot) return;
   if(message.channel.type === 'dm') {
-    message.channel.send("**No commands in DM ^^**");
+    message.channel.send("**No commands in DM :angry:**");
     return;
   }
   let content = message.content.split(" ");
@@ -27,7 +27,7 @@ client.on("message", message => {
         let commandFile = require(`./commandsDirectory/${commandfilename}.js`);
         commandFile.run(client, message, args, config, content);
     } catch (err) {
-        console.warn("Error with the handler " + err);
+        console.warn("Error with the handler. Error : " + err);
         return;
 
     }
