@@ -13,6 +13,7 @@ module.exports.run = async (client, message, args) => {
         	.setTimestamp();
     msg.edit(ping);
   })
+}
 /*Change the command name !*/
 module.exports.help = {
   name: "ping",
