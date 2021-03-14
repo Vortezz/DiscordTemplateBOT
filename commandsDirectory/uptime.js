@@ -1,28 +1,26 @@
 const Discord = require('discord.js')
-const emojis = require('../config/emojis.json')
-const color = require('../config/colors.json')
 
 module.exports.run = async (client, message, args) => {
-  const done = new Discord.MessageEmbed()
-        	.setTitle(`Calcul...`)
+    const calculation = new Discord.MessageEmbed()
+        	.setTitle(`Calculation...`)
         	.setColor('RANDOM')
         	.setTimestamp();
-  message.channel.send(done).then((msg)=>{
+    message.channel.send(calculation).then((msg)=>{
     days = Math.floor((client.uptime / (1000 * 60 * 60 * 24)) % 60).toString()
     hours = Math.floor((client.uptime / (1000 * 60 * 60)) % 60).toString()
     minuts = Math.floor((client.uptime / (1000 * 60)) % 60).toString()
     seconds = Math.floor((client.uptime / 1000) % 60).toString()
 
-    const done = new Discord.MessageEmbed()
-        	.setTitle(`:timer: Action réussie`)
-          .setDescription(`Temps d'activité du BOT :`)
-          .addField(`Jours :`, days)
-          .addField(`Heures :`, hours)
-          .addField(`Minutes :`, minuts)
-          .addField(`Secondes :`, seconds)
-        	.setColor(color.GREEN)
+    const uptime = new Discord.MessageEmbed()
+        	.setTitle(`:timer: Success`)
+          .setDescription(`BOT uptime :`)
+          .addField(`Days :`, days)
+          .addField(`Hours :`, hours)
+          .addField(`Minuts :`, minuts)
+          .addField(`Seconds :`, seconds)
+        	.setColor('GREEN')
         	.setTimestamp();
-       		 msg.edit(done)
+       		 msg.edit(uptime)
   })
 }
 module.exports.help = {
