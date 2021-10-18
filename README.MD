@@ -1,3 +1,5 @@
+# Outdated
+
 Hello !
 Welcome to this template for a discord.js BOT ! You will find in this template an index.js file and an command Handler !
 Before starting :
